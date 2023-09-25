@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mQuanLyPhieuMuon"
+        android:icon="@drawable/home"
+        android:title="@string/qlpm" />
+    <item
+        android:id="@+id/mQuanLyLoaiSach"
+        android:icon="@drawable/book1"
+        android:title="@string/qlls" />
+    <item
+        android:id="@+id/mQuanLySach"
+        android:icon="@drawable/book2"
+        android:title="@string/qls" />
+    <item
+        android:id="@+id/mQuanLyThanhVien"
+        android:icon="@drawable/person"
+        android:title="@string/qltv" />
+    <group android:checkableBehavior="single">
+        <item android:title="@string/thongKe">
+            <menu>
+                <item
+                    android:id="@+id/mTop10"
+                    android:icon="@drawable/top10"
+                    android:title="@string/top10" />
+                <item
+                    android:id="@+id/mDoanhThu"
+                    android:icon="@drawable/doanhthu"
+                    android:title="@string/doanhthu" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="@string/nguoidung">
+            <menu>
+                <item
+                    android:id="@+id/mTaoTaiKhoan"
+                    android:icon="@drawable/addperson"
+                    android:title="@string/taotk" />
+                <item
+                    android:id="@+id/mDoiMatKhau"
+                    android:icon="@drawable/re_pass"
+                    android:title="@string/doimk" />
+                <item
+                    android:id="@+id/mDangXuat"
+                    android:icon="@drawable/log_out"
+                    android:title="@string/dangXuat" />
+            </menu>
+        </item>
+    </group>
+</menu>

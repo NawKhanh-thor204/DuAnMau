@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">PNLib</string>
+    <string name="tai_khoan"><b>Tài khoản</b></string>
+    <string name="mat_khau"><b>Mật khẩu</b></string>
+    <string name="qlpm"><b>Quản lý phiếu mượn</b></string>
+    <string name="qlls"><b>Quản lý loại sách</b></string>
+    <string name="qls"><b>Quản lý sách</b></string>
+    <string name="qltv"><b>Quản lý thành viên</b></string>
+    <string name="thongKe"><b>Thống kê</b></string>
+    <string name="top10"><b>Top 10 sách được mượn</b></string>
+    <string name="doanhthu"><b>Doanh thu</b></string>
+    <string name="nguoidung"><b>Người dùng</b></string>
+    <string name="taotk"><b>Tạo tài khoản</b></string>
+    <string name="doimk"><b>Đổi mật khẩu</b></string>
+    <string name="dangXuat"><b>Đăng xuất</b></string>
+    <string name="hoten"><b>Họ và tên</b></string>
+    <string name="nmatkhau"><b>Nhập lại mật khẩu</b></string>
+    <string name="mkc"><b>Nhập mật khẩu cũ</b></string>
+    <string name="mkm"><b>Nhập mật khẩu mới</b></string>
+    <string name="open">open nav</string>
+    <string name="close">close nav</string>
+</resources>

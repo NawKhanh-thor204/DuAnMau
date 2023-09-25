@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Fragment.DoiMatKhau">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="22dp"
+        android:src="@drawable/avatar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/khung_tk_mk"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp">
+
+        <EditText
+            android:id="@+id/edtDoiMKCu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#00FFFFFF"
+            android:hint="@string/mkc"
+            android:inputType="text"
+            android:textColorHint="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/khung_tk_mk"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp">
+
+        <EditText
+            android:id="@+id/edtDoiMKMoi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#00FFFFFF"
+            android:hint="@string/mkm"
+            android:inputType="text"
+            android:textColorHint="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/khung_tk_mk"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp">
+
+        <EditText
+            android:id="@+id/edtNhapLaiMKMoi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#00FFFFFF"
+            android:hint="@string/nmatkhau"
+            android:inputType="text"
+            android:textColorHint="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp">
+
+        <Button
+            android:id="@+id/btnHuyLuuMK"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:background="@drawable/nut_button"
+            android:text="Hủy"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnLuuMK"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:background="@drawable/nut_button"
+            android:text="Lưu"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
