@@ -42,10 +42,10 @@ public class QuanLyPhieuMuon extends Fragment {
         recyclerView = view.findViewById(R.id.rcvDSPM);
         fltAdd = view.findViewById(R.id.fltButtonDSPM);
         //
-        phieuMuonDao = new PhieuMuonDao(getActivity());
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        phieuMuonDao = new PhieuMuonDao(getContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         list = phieuMuonDao.getListPhieuMuon();
-        adapter= new PhieuMuonAdapter(getActivity(),list);
+        adapter= new PhieuMuonAdapter(getContext(),list);
         recyclerView.setAdapter(adapter);
         return view;
     }
