@@ -18,10 +18,7 @@ public class PhieuMuonDao {
     public ArrayList<PhieuMuon> getListPhieuMuon() {
         ArrayList<PhieuMuon> list = new ArrayList<>();
         SQLiteDatabase database = dbHelper.getReadableDatabase();
-        Cursor cursor = database.rawQuery("SELECT PM.MAPM, PM.MATV, TV.HOTEN, PM.MATT, TT.HOTEN," +
-                " PM.MASACH,BOOK.TENSACH, PM.NGAY, PM.TRASACH, PM.TIENTHUE FROM PHIEUMUON PM," +
-                " THANHVIEN TV, THUTHU TT, SACH BOOK  WHERE PM.MATV = TV.MATV and PM.MATT = TT.MATT " +
-                "AND PM.MASACH = BOOK.MASACH ORDER BY PM.MAPM", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM PHIEUMUON", null);
         if (cursor.getCount() != 0) {
             cursor.moveToFirst();
             do {
