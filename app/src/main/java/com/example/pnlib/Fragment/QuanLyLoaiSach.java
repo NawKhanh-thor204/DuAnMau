@@ -43,9 +43,13 @@ public class QuanLyLoaiSach extends Fragment {
         //
         loaiSachDAO = new LoaiSachDAO(getActivity());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        capNhatLv();
+        return view;
+    }
+    public void capNhatLv(){
         list = loaiSachDAO.getAll();
         adapter = new LoaiSachAdapter(getActivity(), list);
         recyclerView.setAdapter(adapter);
-        return view;
+        adapter.notifyDataSetChanged();
     }
 }

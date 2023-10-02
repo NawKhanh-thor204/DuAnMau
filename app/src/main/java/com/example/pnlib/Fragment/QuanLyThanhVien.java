@@ -42,9 +42,13 @@ public class QuanLyThanhVien extends Fragment {
         //
         thanhVienDAO = new ThanhVienDAO(getActivity());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        capNhatLv();
+        return view;
+    }
+    public void capNhatLv() {
         list = thanhVienDAO.getAll();
         adapter = new ThanhVienAdapter(getActivity(), list);
         recyclerView.setAdapter(adapter);
-        return view;
+        adapter.notifyDataSetChanged();
     }
 }
