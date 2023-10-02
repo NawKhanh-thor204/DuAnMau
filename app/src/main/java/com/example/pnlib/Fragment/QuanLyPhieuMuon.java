@@ -11,8 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pnlib.Adapter.PhieuMuonAdapter;
-import com.example.pnlib.Dao.PhieuMuonDao;
+import com.example.pnlib.Adapter.SachAdapter;
+import com.example.pnlib.Dao.PhieuMuonDAO;
+import com.example.pnlib.Dao.SachDAO;
 import com.example.pnlib.Model.PhieuMuon;
+import com.example.pnlib.Model.Sach;
 import com.example.pnlib.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -20,13 +23,11 @@ import java.util.ArrayList;
 
 
 public class QuanLyPhieuMuon extends Fragment {
-
-
+    PhieuMuonDAO phieuMuonDAO;
     RecyclerView recyclerView;
     FloatingActionButton fltAdd;
-    PhieuMuonDao phieuMuonDao;
-    private ArrayList<PhieuMuon> list = new ArrayList<>();
     PhieuMuonAdapter adapter;
+    private ArrayList<PhieuMuon> list = new ArrayList<PhieuMuon>();
 
     public QuanLyPhieuMuon() {
 
@@ -42,10 +43,10 @@ public class QuanLyPhieuMuon extends Fragment {
         recyclerView = view.findViewById(R.id.rcvDSPM);
         fltAdd = view.findViewById(R.id.fltButtonDSPM);
         //
-        phieuMuonDao = new PhieuMuonDao(getContext());
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        list = phieuMuonDao.getListPhieuMuon();
-        adapter= new PhieuMuonAdapter(getContext(),list);
+        phieuMuonDAO = new PhieuMuonDAO(getActivity());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        list = phieuMuonDAO.getAll();
+        adapter = new PhieuMuonAdapter(getActivity(), list);
         recyclerView.setAdapter(adapter);
         return view;
     }

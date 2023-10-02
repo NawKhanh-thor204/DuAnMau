@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pnlib.Adapter.SachAdapter;
-import com.example.pnlib.Dao.SachDao;
+import com.example.pnlib.Dao.SachDAO;
 import com.example.pnlib.Model.Sach;
 import com.example.pnlib.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class QuanLySach extends Fragment {
 
-    SachDao sachDao;
+    SachDAO sachDao;
     RecyclerView recyclerView;
     FloatingActionButton fltAdd;
     SachAdapter adapter;
@@ -42,9 +42,9 @@ public class QuanLySach extends Fragment {
         fltAdd = view.findViewById(R.id.fltButtonDSS);
 
         //
-        sachDao = new SachDao(getActivity());
+        sachDao = new SachDAO(getActivity());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        list = sachDao.selectAll();
+        list = sachDao.getAll();
         adapter = new SachAdapter(getActivity(), list);
         recyclerView.setAdapter(adapter);
         return view;

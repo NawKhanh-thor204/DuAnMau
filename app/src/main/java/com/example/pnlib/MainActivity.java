@@ -12,9 +12,14 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
+import com.example.pnlib.Dao.ThuThuDAO;
 import com.example.pnlib.Fragment.DoanhThu;
 import com.example.pnlib.Fragment.DoiMatKhau;
 import com.example.pnlib.Fragment.QuanLyLoaiSach;
@@ -23,6 +28,7 @@ import com.example.pnlib.Fragment.QuanLySach;
 import com.example.pnlib.Fragment.QuanLyThanhVien;
 import com.example.pnlib.Fragment.TaoTaiKhoan;
 import com.example.pnlib.Fragment.Top10;
+import com.example.pnlib.Model.ThuThu;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        //
         // Mặc định đến quản lý phiếu mượn
         FragmentManager fragmentManager = getSupportFragmentManager();
         getSupportActionBar().setTitle(R.string.qlpm);
@@ -99,12 +106,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     });
-                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    });
+                    builder.setNegativeButton("No", null);
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }

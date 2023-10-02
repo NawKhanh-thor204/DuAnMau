@@ -10,7 +10,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String Db_name = "PN";
 
     public DbHelper(@Nullable Context context) {
-        super(context, Db_name, null, 2);
+        super(context, Db_name, null, 5);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO SACH VALUES(1, 'Doraemon',2000,1),(2, 'Android',29865,2)");
         db.execSQL("INSERT INTO THUTHU VALUES('khanhsnph43678','Sằm Nam Khánh','khanh')");
         db.execSQL("INSERT INTO THANHVIEN VALUES (1,'Hà Ngọc Ánh','2000'),(2,'Trần Mỹ Hương','2000'),(3,'Nguyễn Ngọc Lm','2000')");
-        db.execSQL("INSERT INTO PHIEUMUON VALUES (1,1,'khanhsnph43678', 1, '19/03/2022', 1, 2500),(1,1,'khanhsnph43678', 1, '19/04/2022', 0, 2500)");
+        db.execSQL("INSERT INTO PHIEUMUON VALUES (1,1,'khanhsnph43678', 1, '19/03/2022', 1, 2500),(2,2,'khanhsnph43678', 2, '19/04/2022', 0, 2500)");
 
     }
 

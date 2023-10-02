@@ -1,78 +1,59 @@
 package com.example.pnlib.Model;
 
+import java.util.Date;
+
 public class PhieuMuon {
-    private int mapm, matv, masach, trasach, tienthue;
-    private String matt, ngay;
-    private String tenTv, tenTt, tenSach;
+    private int maPM;
+    private String maTT;
+    private int maTV;
+    private int maSach;
+    private String ngay;
+    private int traSach;
+    private int tienThue;
 
-    public PhieuMuon(int mapm, int matv, String tenTv, String matt, String tenTt, int masach, String tenSach, String ngay, int trasach, int tienthue) {
-        this.mapm = mapm;
-        this.matv = matv;
-        this.masach = masach;
-        this.trasach = trasach;
-        this.tienthue = tienthue;
-        this.matt = matt;
+    public PhieuMuon() {
+    }
+
+    public PhieuMuon(int maPM, String maTT, int maTV, int maSach, String ngay, int traSach, int tienThue) {
+        this.maPM = maPM;
+        this.maTT = maTT;
+        this.maTV = maTV;
+        this.maSach = maSach;
         this.ngay = ngay;
-        this.tenTv = tenTv;
-        this.tenTt = tenTt;
-        this.tenSach = tenSach;
+        this.traSach = traSach;
+        this.tienThue = tienThue;
     }
 
-    public PhieuMuon(int matv,String matt, int masach, String ngay, int trasach, int tienthue) {
-        this.matv = matv;
-        this.masach = masach;
-        this.trasach = trasach;
-        this.tienthue = tienthue;
-        this.matt = matt;
-        this.ngay = ngay;
+    public int getMaPM() {
+        return maPM;
     }
 
-    public int getMapm() {
-        return mapm;
+    public void setMaPM(int maPM) {
+        this.maPM = maPM;
     }
 
-    public void setMapm(int mapm) {
-        this.mapm = mapm;
+    public String getMaTT() {
+        return maTT;
     }
 
-    public int getMatv() {
-        return matv;
+    public void setMaTT(String maTT) {
+        this.maTT = maTT;
     }
 
-    public void setMatv(int matv) {
-        this.matv = matv;
+    public int getMaTV() {
+        return maTV;
     }
 
-    public int getMasach() {
-        return masach;
+    public void setMaTV(int maTV) {
+        this.maTV = maTV;
     }
 
-    public void setMasach(int masach) {
-        this.masach = masach;
+    public int getMaSach() {
+        return maSach;
     }
 
-    public int getTrasach() {
-        return trasach;
-    }
-
-    public void setTrasach(int trasach) {
-        this.trasach = trasach;
-    }
-
-    public int getTienthue() {
-        return tienthue;
-    }
-
-    public void setTienthue(int tienthue) {
-        this.tienthue = tienthue;
-    }
-
-    public String getMatt() {
-        return matt;
-    }
-
-    public void setMatt(String matt) {
-        this.matt = matt;
+    public void setMaSach(int maSach) {
+        this.maSach = maSach;
     }
 
     public String getNgay() {
@@ -83,27 +64,22 @@ public class PhieuMuon {
         this.ngay = ngay;
     }
 
-    public String getTenTv() {
-        return tenTv;
+    public int getTraSach() {
+        return traSach;
     }
 
-    public void setTenTv(String tenTv) {
-        this.tenTv = tenTv;
+    public void setTraSach(int traSach) {
+        this.traSach = traSach;
     }
 
-    public String getTenTt() {
-        return tenTt;
+    public int getTienThue() {
+        return tienThue;
     }
 
-    public void setTenTt(String tenTt) {
-        this.tenTt = tenTt;
-    }
-
-    public String getTenSach() {
-        return tenSach;
-    }
-
-    public void setTenSach(String tenSach) {
-        this.tenSach = tenSach;
+    public void setTienThue(int tienThue) {
+        this.tienThue = tienThue;
     }
 }
+
+
+

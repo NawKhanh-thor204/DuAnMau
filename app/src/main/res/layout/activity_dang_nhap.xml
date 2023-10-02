@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
     android:background="@color/white"
     android:gravity="center|top"
     android:orientation="vertical"
+    android:padding="15dp"
     tools:context=".DangNhap">
 
     <ImageView
@@ -64,17 +64,25 @@
             android:layout_marginBottom="10dp"
             android:backgroundTint="#00FFFFFF"
             android:hint="@string/mat_khau"
-            android:inputType="textPassword"
-            />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/chkRememberPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Lưu mật khẩu" />
 
     <Button
         android:id="@+id/btnDangNhap"
         android:layout_width="213dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:text="Đăng nhập"
         android:background="@drawable/nut_button"
+        android:text="Đăng nhập"
         android:textAllCaps="false"
         android:textStyle="bold" />
 
