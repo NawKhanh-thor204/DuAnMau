@@ -1,10 +1,12 @@
 package com.example.pnlib.Dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.pnlib.Database.DbHelper;
+import com.example.pnlib.Model.LoaiSach;
 import com.example.pnlib.Model.Sach;
 
 import java.util.ArrayList;
@@ -41,6 +43,28 @@ public class SachDAO {
         cursor.close();
         sqLiteDatabase.close();
         return giaThue;
+    }
+    public long insert(Sach sach) {
+        ContentValues values = new ContentValues();
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        values.put("TENSACH", sach.getTenSach());
+        values.put("GIATHUE", sach.getGiaThue());
+        values.put("MALOAI", sach.getMaLoai());
+        return sqLiteDatabase.insert("SACH", null, values);
+    }
+
+    public long update(Sach sach) {
+        ContentValues values = new ContentValues();
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        values.put("TENSACH", sach.getTenSach());
+        values.put("GIATHUE", sach.getGiaThue());
+        values.put("MALOAI", sach.getMaLoai());
+        return sqLiteDatabase.update("SACH", values, "MASACH=?", new String[]{String.valueOf(sach.getMaSach())});
+    }
+
+    public long delete(String id) {
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        return sqLiteDatabase.delete("SACH", "MASACH=?", new String[]{id});
     }
     public ArrayList<Sach> getData(String sql, String... selectionArgs) {
         ArrayList<Sach> list = new ArrayList<>();

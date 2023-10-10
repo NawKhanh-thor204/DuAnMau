@@ -1,11 +1,14 @@
 package com.example.pnlib.Dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.pnlib.Database.DbHelper;
 import com.example.pnlib.Model.PhieuMuon;
+import com.example.pnlib.Model.ThanhVien;
+
 import java.util.ArrayList;
 
 
@@ -13,7 +16,29 @@ public class PhieuMuonDAO {
     private final DbHelper dbHelper;
     private SQLiteDatabase sqLiteDatabase;
 
+    public long insert(PhieuMuon phieuMuon) {
+        ContentValues values = new ContentValues();
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        values.put("MATV", phieuMuon.getMaTV());
+        values.put("MATT", phieuMuon.getMaTT());
+        values.put("MASACH", phieuMuon.getMaSach());
+        values.put("NGAY", phieuMuon.getNgay());
+        values.put("TRASACH", phieuMuon.getTraSach());
+        values.put("TIENTHUE", phieuMuon.getTienThue());
+        return sqLiteDatabase.insert("PHIEUMUON", null, values);
+    }
 
+    public long update(PhieuMuon phieuMuon) {
+        ContentValues values = new ContentValues();
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        values.put("TRASACH", phieuMuon.getTraSach());
+        return sqLiteDatabase.update("PHIEUMUON", values, "MAPM=?", new String[]{String.valueOf(phieuMuon.getMaPM())});
+    }
+
+    public long delete(String id) {
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        return sqLiteDatabase.delete("PHIEUMUON", "MAPM=?", new String[]{String.valueOf(id)});
+    }
     public PhieuMuonDAO(Context context) {
         dbHelper = new DbHelper(context);
     }

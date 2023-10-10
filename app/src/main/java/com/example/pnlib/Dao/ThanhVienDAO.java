@@ -1,5 +1,6 @@
 package com.example.pnlib.Dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -19,10 +20,33 @@ public class ThanhVienDAO {
         dbHelper = new DbHelper(context);
     }
 
+
+    public long insert(ThanhVien thanhVien) {
+        ContentValues values = new ContentValues();
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        values.put("HOTEN", thanhVien.getHoTen());
+        values.put("NAMSINH", thanhVien.getNamSinh());
+        return sqLiteDatabase.insert("THANHVIEN", null, values);
+    }
+
+    public long update(ThanhVien thanhVien) {
+        ContentValues values = new ContentValues();
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        values.put("HOTEN", thanhVien.getHoTen());
+        values.put("NAMSINH", thanhVien.getNamSinh());
+        return sqLiteDatabase.update("THANHVIEN", values, "MATV=?", new String[]{String.valueOf(thanhVien.getMaTV())});
+    }
+
+    public long delete(String id) {
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        return sqLiteDatabase.delete("THANHVIEN", "MATV=?", new String[]{String.valueOf(id)});
+    }
+
     public ArrayList<ThanhVien> getAll() {
         String sql = "SELECT * FROM THANHVIEN";
         return getData(sql);
     }
+
     public String getID(String id) {
         sqLiteDatabase = dbHelper.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT HOTEN FROM THANHVIEN WHERE MATV =?", new String[]{id});
@@ -35,9 +59,10 @@ public class ThanhVienDAO {
         cursor.close();
         return "Không tìm thấy";
     }
+
     private ArrayList<ThanhVien> getData(String sql, String... selectionArgs) {
         ArrayList<ThanhVien> list = new ArrayList<>();
-        sqLiteDatabase=dbHelper.getReadableDatabase();
+        sqLiteDatabase = dbHelper.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery(sql, selectionArgs);
         while (cursor.moveToNext()) {
             ThanhVien thanhVien = new ThanhVien();
@@ -48,4 +73,5 @@ public class ThanhVienDAO {
         }
         return list;
     }
+
 }
