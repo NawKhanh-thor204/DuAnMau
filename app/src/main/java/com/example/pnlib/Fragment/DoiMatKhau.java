@@ -80,10 +80,11 @@ public class DoiMatKhau extends Fragment {
         }
         else {
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
-            String passOld = edtDoiMKCu.getText().toString();
+
+            String passOld = sharedPreferences.getString("PASSWORD","");
             String passNew = edtDoiMKMoi.getText().toString();
             String rePass = edtNhapLaiMKMoi.getText().toString();
-            if(!passOld.equals(passNew)){
+            if(!passOld.equals(edtDoiMKCu.getText().toString())){
                 Toast.makeText(getActivity(), "Mật khẩu cũ sai", Toast.LENGTH_SHORT).show();
                 check=-1;
             }
