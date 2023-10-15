@@ -10,7 +10,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String Db_name = "PN";
 
     public DbHelper(@Nullable Context context) {
-        super(context, Db_name, null, 7);
+        super(context, Db_name, null, 9);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "MATV INTEGER REFERENCES THANHVIEN(MATV)," +
                 "MATT TEXT REFERENCES THUTHU(MATT) , " +
                 "MASACH INTEGER REFERENCES SACH(MASACH) , " +
-                "NGAY TEXT , TRASACH INTEGER , TIENTHUE INTEGER )";
+                "NGAY DATE , TRASACH INTEGER , TIENTHUE INTEGER )";
         db.execSQL(createTablePhieuMuon);
 
         db.execSQL("INSERT INTO LOAISACH VALUES(1, 'Thiếu nhi'),(2, 'CNTT')");

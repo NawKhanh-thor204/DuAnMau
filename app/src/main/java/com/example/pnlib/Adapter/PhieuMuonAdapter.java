@@ -30,6 +30,7 @@ import com.example.pnlib.Model.Sach;
 import com.example.pnlib.Model.ThanhVien;
 import com.example.pnlib.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.viewHolder> {
@@ -38,6 +39,7 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
     ThanhVienDAO thanhVienDAO;
     SachDAO sachDAO;
     PhieuMuonDAO phieuMuonDAO;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
     public PhieuMuonAdapter(Context context, ArrayList<PhieuMuon> list) {
         this.context = context;
@@ -64,7 +66,7 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
         holder.txtThanhVienQLPM.setText(tenTV);
         String tenSach = sachDAO.getID(String.valueOf(phieuMuon.getMaSach()));
         holder.txtTenSachQLPM.setText(tenSach);
-        int giaThue = sachDAO.getIDmoney(phieuMuon.getMaPM());
+        int giaThue = sachDAO.getIDmoney(phieuMuon.getMaSach());
         holder.txtTienThueQLPM.setText(String.valueOf(giaThue));
         if (list.get(position).getTraSach() == 1) {
             holder.txtTraSach.setText("Đã trả sách");

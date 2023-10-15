@@ -16,6 +16,7 @@ public class PhieuMuonDAO {
     private final DbHelper dbHelper;
     private SQLiteDatabase sqLiteDatabase;
 
+
     public long insert(PhieuMuon phieuMuon) {
         ContentValues values = new ContentValues();
         sqLiteDatabase = dbHelper.getWritableDatabase();

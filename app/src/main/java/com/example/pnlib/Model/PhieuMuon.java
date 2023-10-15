@@ -1,7 +1,5 @@
 package com.example.pnlib.Model;
 
-import java.util.Date;
-
 public class PhieuMuon {
     private int maPM;
     private String maTT;
